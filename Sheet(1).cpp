@@ -52,5 +52,42 @@ void sum(int x, int y) {
 void sub(int x, int y) {
     cout << "Subtraction of the 2 numbers = " << x - y;
 }
+//*****************************************************************************
+
+/*
+2.	Write a program to read a positive number and then test the
+number is prime or not using function.
+*/
+#include <iostream>
+using namespace std;
+void prime(int);
+int main()
+{
+    int n;
+    cout << "Enter Positive Number: ";
+    if (n > 0) {
+        cin >> n;
+        prime(n);
+    }
+    else {
+        cout << "That's Negative Number or Undefined char";
+    }
+    return 0;
+}
+
+void prime(int a) {
+    int i,count = 0;
+    for (i = 2; i < a; i++) {
+        if (a % i == 0) {
+            count++;
+            break; 
+        }
+    }
+    if (count == 0) cout << "Prime";
+    else cout << "Not Prime";
+}
+//*****************************************************************************
+
+
 
 
