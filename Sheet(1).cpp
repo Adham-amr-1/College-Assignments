@@ -88,6 +88,101 @@ void prime(int a) {
 }
 //*****************************************************************************
 
+/*
+3.	Write a program to calculate the result of the following equation using two functions only
+    ((3+4+5+6)/(9*11*13*15) - (7*10*13*…*19)/(10+15+20+…+40))
+*/
+#include <iostream>
+using namespace std;
+int sum(int, int, int);
+int multi(int, int, int);
+int main()
+{
+    float result;
+
+    result = (sum(3, 6, 1)*1.0 / multi(9, 15, 2)) - (multi(7, 19, 3)*1.0 / sum(10, 40, 5));
+    
+    cout << "The Result = " << result;
+
+    return 0;
+}
+int sum(int a, int b, int st) {
+    int i, res = 0;
+    for (i = a; i <= b; i += st) {
+        res += i;
+    }
+    return res;
+}
+int multi(int a, int b, int st) {
+    int i, res = 1;
+    for (i = a; i <= b; i += st) {
+        res *= i;
+    }
+    return res;
+}
+//*****************************************************************************
+
+/*
+4.	Write a program to add numbers from A to B using function 
+note: user will enter values of A and B.
+*/
+#include <iostream>
+using namespace std;
+int allsumi(int, int);
+int main()
+{
+    int num1, num2, sumi;
+    cout << "Enter Two Numbers: ";
+    cin >> num1 >> num2;
+    sumi = allsumi(num1, num2);
+    cout << "The Sum From " << num1 << " To " << num2 << " = " << sumi;
+
+    return 0;
+}
+int allsumi(int a, int b) {
+    int i, sum = 0;
+    for (i = a; i <= b; i++) {
+        sum += i;
+    }
+    return sum;
+}
+//*****************************************************************************
+
+
+
+
+//*****************************************************************************
+
+/*
+6.	 Write a program to count and print number of zeros in an integer 
+    number which will be entered by the user using a function.
+*/
+#include <iostream>
+using namespace std;
+int zeros(int);
+int main()
+{
+    int num, result ;
+    cout << "Enter Number: ";
+    cin >> num;
+    result = zeros(num);
+    cout << "Number Of Zeros in " << num << " Is Equal: "<<result;
+
+    return 0;
+}
+int zeros(int n) {
+    int count = 0;
+    while (n != 0) {
+        if (n % 10 == 0) {
+            count++;
+        }
+        n /= 10;
+
+    }
+    return count;
+}
+
+
 
 
 
