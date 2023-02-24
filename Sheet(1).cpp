@@ -148,9 +148,59 @@ int allsumi(int a, int b) {
 }
 //*****************************************************************************
 
+/*
+5.	Write a program to print the following pattern using 2 functions
 
+########
+#######
+######
+#####
+reverse
+###
+####
+#####
+again
+#####
+####
+reverse
+##
+###
 
+*/
+#include <iostream>
+using namespace std;
+void pforward(int ,int );
+void preverse(int ,int);
+int main()
+{	
+	preverse(4, 8);
+	cout << "Reverse" << endl;
+	pforward(3, 5);
+	cout << "Again" << endl;
+	preverse(2,5);
+	cout << "Reverse" << endl;
+	pforward(2,3);
 
+	return 0;
+}
+void pforward(int r, int c) {
+	int i, k;
+	for (i = r; i > 0 ; i--) {
+		for (k = (i-1); k < c ; k++) {
+			cout << "# ";
+		}
+		cout << endl;
+	}
+}
+void preverse(int r, int c) {
+	int i, k;
+	for (i = 1; i <= r; i++) {
+		for (k = (i-1); k < c; k++) {
+			cout << "# ";
+		}
+		cout << endl;
+	}
+}
 //*****************************************************************************
 
 /*
