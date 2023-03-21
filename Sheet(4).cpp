@@ -1,3 +1,43 @@
+/*
+1. Write a program to read id (int) , score(float) ,and grade (char)
+of 30 students using array of structure . The program will find and
+print the id of these students who get score greater than or equal
+50.
+*/
+
+#include <iostream>
+using namespace std;
+struct student {
+	int id;
+	float score;
+	char grade;
+};
+student readData(student);
+int main() {
+	student st[30];
+	int i;
+	for (i = 0; i < 30; i++) {
+		readData(st[i]);
+	}
+	cout << "The Student IDs that got Score >= 50 are: " << endl;
+	for (i = 0; i < 30; i++) {
+		if (st[i].score >= 50) {
+			cout << st[i].id << endl;
+		}
+	}
+		
+	return 0;
+}
+student readData(student stu) {
+	cout << "Enter The Student ID: ";
+	cin >> stu.id;
+	cout << "Enter The Student Score: ";
+	cin >> stu.score;
+	cout << "Enter The Student Grade: ";
+	cin >> stu.grade;
+	cout << "*******************************";
+	return stu;
+}
 
 
 
@@ -77,5 +117,62 @@ int main() {
 
 	return 0;
 }
+
+/******************************************************************************************************************
+/*
+6) Write a program to read in the employee data and search for a
+specific employee using :
+a) A function to read the employee data {emp_id, emp_name,
+and emp_salary}. Done
+b) Another search function that passes in an array of Employees ,
+id and return if this id is found in array of employees or not.
+c) A main function to enter data of 20 employees then send it
+to search function and id to search for it in employees.
+*/
+
+#include <iostream>
+using namespace std;
+struct employee {
+	int id;
+	float salary;
+	string name;
+};
+employee dataread(employee);
+void search(employee, int);
+int main() {
+	employee mowazafen[20];
+	int i ,id;
+	for (i = 0; i < 20; i++) {
+		dataread(mowazafen[i]);
+	}
+		cout << "Enter the ID to search for: ";
+		cin >> id;
+		search(mowazafen, id);
+		
+	return 0;
+}
+employee dataread(employee mowazaf) {
+	cout << "Enter The Employee Id: ";
+	cin >> mowazaf.id;
+	cout << "Enter The Employee name: ";
+	cin >> mowazaf.name;
+	cout << "Enter The Employee salary: ";
+	cin >> mowazaf.salary;
+	cout << "**********************************\n";
+	return mowazaf;
+}
+void search(employee mowazaf[], int id) {
+	int i;
+	for (i = 0; i < 20; i++) {
+		if (mowazaf[i].id == id) {
+			cout << "This Id Exist";
+			break;
+		}
+	}
+	if (i == 20) {
+		cout << "Doesn't exist";
+	}
+}
+
 
 
