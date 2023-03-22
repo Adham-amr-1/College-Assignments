@@ -41,7 +41,7 @@ student readData(student stu) {
 
 
 
-/****************************************************************************
+//****************************************************************************
 /*
 2. Write a program to read id (int) , gpa (float), gender (char) of 10
 students using array of structure ,the program calculate the
@@ -117,8 +117,41 @@ int main() {
 
 	return 0;
 }
+//******************************************************************************************************************
 
-/******************************************************************************************************************
+/*
+3. Define a structure named point which have two values x,y.
+Then, define another structure named line which has two points.
+Finally, write a program that read a line and print its length.
+
+*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+struct point {
+	double x, y;
+};
+struct line {
+	point p1, p2;
+};
+int main() {
+	line Myline;
+	double result, xLine, yLine;
+	cout << "Enter The X & Y Of the first Line: ";
+	cin >> Myline.p1.x >> Myline.p1.y;
+	cout << "Enter The X & Y Of the Second Line: ";
+	cin >> Myline.p2.x >> Myline.p2.y;
+	xLine = Myline.p1.x - Myline.p2.x;
+	yLine = Myline.p1.y - Myline.p2.y;
+	result = pow((xLine*xLine)+(yLine*yLine),0.5);
+
+	cout << "The Length of the line is = " << result;
+		
+	return 0;
+}
+
+//******************************************************************************************************************
 /*
 6) Write a program to read in the employee data and search for a
 specific employee using :
