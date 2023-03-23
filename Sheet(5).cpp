@@ -18,10 +18,6 @@ public:
 		num = 0;
 		den = 1;
 	}
-	fraction(int n, int d) {
-		n = num;
-		d = den;
-	}
 	void setnum(int n) {
 		num = n;
 	}
