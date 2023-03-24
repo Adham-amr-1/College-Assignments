@@ -65,3 +65,45 @@ int main() {
 	return 0;
 }
 //*****************************************************************************************************
+
+/*
+1. Define a class called Counter whose objects count things. An object of this class
+records a count that is a nonnegative integer. Include methods to set the counter to 0, to
+increase the count by 1, and to decrease the count by 1. Be sure that no method allows the
+value of the counter to become negative. Include an accessor method that returns the
+current count value and a method that outputs the count to the screen. There should be no
+input method or other mutator methods. The only method that can set the counter is the
+one that sets it to zero.
+*/
+
+#include <iostream>
+using namespace std;
+class counter {
+private:
+	int count;
+public:
+	counter (){
+		count = 0;
+	}
+	void set_zero() {
+		count = 0;
+	}
+	void upcount() {
+		count++;
+	}
+	void downcount() {
+		if(count>0)
+			count--;
+	}
+	int countr() {
+		return count;
+	}
+	void countout() {
+		cout << "Count = " << countr;
+	}
+};
+int main() {
+
+	return 0;
+}
+
