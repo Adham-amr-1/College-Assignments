@@ -166,45 +166,40 @@ to search function and id to search for it in employees.
 #include <iostream>
 using namespace std;
 struct employee {
-	int id;
-	float salary;
-	string name;
+    int id;
+    string name;
+    double salary;
 };
-employee dataread(employee);
-void search(employee, int);
-int main() {
-	employee mowazafen[20];
-	int i ,id;
-	for (i = 0; i < 20; i++) {
-		dataread(mowazafen[i]);
-	}
-		cout << "Enter the ID to search for: ";
-		cin >> id;
-		search(mowazafen, id);
-		
-	return 0;
+void readdata(employee &mowazaf) {
+    cout << "please enter id\n";
+    cin >> mowazaf.id;
+    cout << "please enter name\n";
+    cin >> mowazaf.name;
+    cout << "please enter salary\n";
+    cin >> mowazaf.salary;
 }
-employee dataread(employee mowazaf) {
-	cout << "Enter The Employee Id: ";
-	cin >> mowazaf.id;
-	cout << "Enter The Employee name: ";
-	cin >> mowazaf.name;
-	cout << "Enter The Employee salary: ";
-	cin >> mowazaf.salary;
-	cout << "**********************************\n";
-	return mowazaf;
-}
-void search(employee mowazaf[], int id) {
-	int i;
-	for (i = 0; i < 20; i++) {
-		if (mowazaf[i].id == id) {
-			cout << "This Id Exist";
-			break;
-		}
-	}
-	if (i == 20) {
-		cout << "Doesn't exist";
-	}
-}
+void search(employee y[], int z) {
+    int i;
+    for (i = 0; i < 20; i++) {
+        if (y[i].id == z) {
+            cout << "id exist\n";
+            return;
+        }
+    }
 
+    if (i == 20)
+        cout << "id not exist";
+}
+int main()
+{
+    employee mwazfen[20];
+    int i, id;
+    for (i = 0; i < 20; i++) {
+        readdata(mwazfen[i]);
+    }
+    cout << "please enter the id to search for\n";
+    cin >> id;
+    search(mwazfen, id);
+    return 0;
+}
 
