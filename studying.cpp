@@ -203,5 +203,81 @@ int main()
 }
 //*************************************************
 
+#include <iostream>
+
+using namespace std;
+void multi(int*);
+int main()
+{
+    int i, arr[10];
+    for (i = 0; i < 10; i++) {
+        cout << "Enter The Number: ";
+        cin >> arr[i];
+    }
+    cout << endl;
+    multi(&arr[0]);
+    for (i = 0; i < 10; i++) {
+        
+        cout << arr[i] << " ";
+    }
+    return 0;
+}
+void multi(int* arr) {
+    int i;
+    for (i = 0; i < 10; i++) {
+        arr[i] *= 2;
+    }
+}
+
+//********************************************
+/*
+Add (a+b),(b+c),(a+c) the size of array is n
+*/
+
+#include <iostream>
+
+using namespace std;
+void add(int*, int*, int);
+void read(int*, int);
+void print(int*, int);
+int main()
+{
+    int n;
+    cin >> n;
+    int* a = new int(n);
+    int* b = new int(n);
+    int* c = new int(n);
+
+
+    read(&a[0], n);
+    read(&b[0], n);
+    read(&c[0], n);
+    add(&a[0], &b[0], n);
+    add(&a[0], &c[0], n);
+    add(&c[0], &b[0], n);
+
+    return 0;
+}
+void read(int* arr , int sz) {
+    int i;
+    for (i = 0; i < sz; i++) {
+        cout << "Enter The Number: ";
+        cin >> arr[i];
+    }
+    cout << "/************************" << endl;
+}
+void add(int* arr1, int* arr2 , int sz) {
+    int i;
+    int* arr3 = new int(sz);
+    for (i = 0; i < sz; i++) {
+        arr3[i] = arr1[i] + arr2[i];
+        cout << arr3[i]<<" ";
+    }
+    cout << endl;
+}
+
+//********************************************
+
+
 
 
